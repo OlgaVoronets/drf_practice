@@ -1,0 +1,130 @@
+[
+  {
+    "model": "dogs.category",
+    "pk": 1,
+    "fields": {
+      "name": "Овчарка",
+      "description": "Большая"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 2,
+    "fields": {
+      "name": "Шит-цу",
+      "description": "Маленькая"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 3,
+    "fields": {
+      "name": "Колли",
+      "description": "Красивая и милая"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 4,
+    "fields": {
+      "name": "Ретривер",
+      "description": "Сама доброта!"
+    }
+  },
+  {
+    "model": "dogs.category",
+    "pk": 5,
+    "fields": {
+      "name": "Чихуахуа",
+      "description": "Концентрация силы"
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 1,
+    "fields": {
+      "name": "Айви",
+      "category": 2,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 2,
+    "fields": {
+      "name": "Юма",
+      "category": 1,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 3,
+    "fields": {
+      "name": "Лесси",
+      "category": 1,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 4,
+    "fields": {
+      "name": "Юна",
+      "category": 1,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 5,
+    "fields": {
+      "name": "Поппи",
+      "category": 2,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 6,
+    "fields": {
+      "name": "Лесси",
+      "category": 3,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 7,
+    "fields": {
+      "name": "Пушок",
+      "category": 1,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  },
+  {
+    "model": "dogs.dog",
+    "pk": 8,
+    "fields": {
+      "name": "Несси",
+      "category": 4,
+      "photo": "",
+      "birth_day": "2023-12-07",
+
+    }
+  }
+]
