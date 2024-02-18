@@ -28,6 +28,7 @@ class Dog(models.Model):
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
                               **NULLABLE, verbose_name='Владелец')
+    is_public = models.BooleanField(default=False, verbose_name='статус')
 
     def __str_(self):
         return f'{self.name} ({self.category})'
