@@ -3,10 +3,12 @@ from rest_framework.fields import SerializerMethodField
 from rest_framework.relations import SlugRelatedField
 
 from dogs.models import Dog, Category
+from dogs.validators import validator_words
 
 
 class DogSerializer(serializers.ModelSerializer):
     category = SlugRelatedField(slug_field='name', queryset=Category.objects.all())
+    name = serializers.CharField(validators=[validator_words])
 
     class Meta:
         model = Dog
