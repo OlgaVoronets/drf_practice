@@ -3,12 +3,15 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import generics
 
 from dogs.models import Category, Dog
+from dogs.paginators import DogListPaginator
 from dogs.permissions import IsModerator, IsDogPublic, IsDogOwner
 from dogs.serializers import CategorySerializer, DogSerializer, DogDetailSerializer, CategoryDetailSerializer
 
 
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    # pagination_class = DogListPaginator
     serializers = {
         'retrieve': CategoryDetailSerializer,
         'list': CategorySerializer
@@ -27,6 +30,7 @@ class DogListView(generics.ListAPIView):
     serializer_class = DogSerializer
     queryset = Dog.objects.all()
     permission_classes = [AllowAny]
+    # pagination_class = DogListPaginator
 
 
 class DogRetrieveView(generics.RetrieveAPIView):
