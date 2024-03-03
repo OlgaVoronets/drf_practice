@@ -2,6 +2,7 @@
 from django.db import models
 
 from config import settings
+from services import convert_currency
 
 NULLABLE = {'blank': True, 'null': True}
 
@@ -29,9 +30,18 @@ class Dog(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
                               **NULLABLE, verbose_name='Владелец')
     is_public = models.BooleanField(default=False, verbose_name='статус')
+    price = models.PositiveIntegerField(**NULLABLE, verbose_name='цена, руб')
 
     def __str_(self):
         return f'{self.name} ({self.category})'
+
+    @property
+    def price_usd(self):
+        return convert_currency(self.price, 'usd')
+
+    @property
+    def price_eur(self):
+        return convert_currency(self.price, 'eur')
 
     class Meta:
         verbose_name = 'собака'

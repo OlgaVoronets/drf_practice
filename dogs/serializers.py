@@ -9,6 +9,14 @@ from dogs.validators import validator_words
 class DogSerializer(serializers.ModelSerializer):
     category = SlugRelatedField(slug_field='name', queryset=Category.objects.all())
     name = serializers.CharField(validators=[validator_words])
+    price_usd = SerializerMethodField()
+    price_eur = SerializerMethodField()
+
+    def get_price_usd(self, obj):
+        return obj.price_usd
+
+    def get_price_eur(self, obj):
+        return obj.price_eur
 
     class Meta:
         model = Dog
